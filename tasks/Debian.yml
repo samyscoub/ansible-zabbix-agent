@@ -3,16 +3,6 @@
 
 - name: "Include Zabbix gpg ids"
   include_vars: zabbix.yml
-  
-- name: install basic python lib for ansible module to work
-  package:
-    name: python-urllib3
-    state: present
-  become: yes
-  check_mode: no
-  tags:
-    - zabbix-agent
-    - init
 
 - name: "Set short version name"
   set_fact:
